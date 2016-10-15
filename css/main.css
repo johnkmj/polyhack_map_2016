@@ -13,10 +13,18 @@ html, body{
     z-index: 1;
 }
 
+form{
+    position: absolute;
+    height: 0;
+    width: 100%;
+    top: 50%;
+    transform: translate(0,-8em);
+}
+
 input{
     font-size: 300%;
     width: 60%;
-    margin: 1% 20%;
+    margin: 0.2em 20%;
     height: 1.2em;
     border: 5px solid black;
 }
@@ -24,7 +32,7 @@ input{
 button{
     font-size: 300%;
     width: 60%;
-    margin: 1% 20%;
+    margin: 0.2em 20%;
     height: 1.2em;
 }
 
