@@ -7,7 +7,7 @@
 ## Instalation
 ## Create a virtualenv, and activate this: 
 
-virtualenv env 
+virtualenv -p python2.7 env
 source env/bin/activate
 pip install -r requirements.txt
 python run.py
