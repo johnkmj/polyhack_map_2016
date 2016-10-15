@@ -1,17 +1,12 @@
-form=document.getElementById("form-container")
-
-go=document.getElementById("go")
-go.addEventListener("click",search)
-
-
 function search(){
+    console.log("go!")
     $.ajax({
            type: "GET",
            url: "http://httpbin.org/get",
            data: $("#form").serialize(), 
            success: function(data)
            {
-               getresults(data);
+               getresults(data); 
                showmap()
            }
          });
