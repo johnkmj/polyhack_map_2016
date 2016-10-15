@@ -6,23 +6,72 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width user-scalable=no">
 
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 <link href="css/main.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
 <script src="http://malsup.github.com/jquery.form.js"></script>     
 </head>
 
 <body>
-
+<datalist id="rooms">
+  <option value="RM_402">
+  <option value="RM_401_a">
+  <option value="circle3155"
+  <option value="RM_401_b">
+  <option value="ST_WEST">
+  <option value="ST_MID">
+  <option value="RR_M1">
+  <option value="RR_F1">
+  <option value="RM_408_a">
+  <option value="RM_408_b">
+  <option value="RM_412">
+  <option value="RM_409">
+  <option value="RM_411">
+  <option value="RM_415">
+  <option value="_x34_05C">
+  <option value="RM_406C">
+  <option value="RM_406E">
+  <option value="RM_417">
+  <option value="RM_419">
+  <option value="RM_406">
+  <option value="circle3193"
+  <option value="circle3195"
+  <option value="circle3197"
+  <option value="RM_412E">
+  <option value="RM_412F">
+  <option value="RM_412G">
+  <option value="RM_412H">
+  <option value="circle3207"
+  <option value="circle3209"
+  <option value="circle3211"
+  <option value="RM_405G">
+  <option value="circle3217"
+  <option value="RM_421">
+  <option value="circle3221"
+  <option value="RM_425">
+  <option value="circle3225"
+  <option value="circle3227"
+  <option value="circle3229"
+  <option value="circle3231"
+  <option value="RM_406F">
+  <option value="RM_412J">
+  <option value="RM_412M">
+  <option value="RM_412L">
+  <option value="RM_412I">
+</datalist>
+    
 <div id="form-container">
     <form id="form">
-        <input type="text" name="start" placeholder="Starting Location"><br>
-        <input type="text" name="end" placeholder="Destination"><br>
+        <div id="title">Tufts Room Mapper</div>
+        <input type="text" name="start" autocomplete="off" list="rooms" placeholder="Starting Location"><br>
+        <input type="text" name="end" autocomplete="off" list="rooms" placeholder="Destination"><br>
         <div id="go" onclick="search()">GO</div>
     </form>    
 </div>
 <div id="map-container">
     <div id="location-holder">
-        <div id="locations">RM_402 to RR_M1</div>
+        <div id="locations"></div>
         <div id="newsearch" onclick="showsearch()">New Search</div>
     </div>
     <div id="floor-selector"></div>
