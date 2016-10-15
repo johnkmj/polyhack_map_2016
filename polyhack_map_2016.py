@@ -24,8 +24,19 @@ def svg_gen(node_path):
     nodes = e.findall(".//*[@id='"+node_path[0]+"']")[0].attrib['fill'] = "red"
     nodes = e.findall(
         ".//*[@id='"+node_path[-1]+"']")[0].attrib['fill'] = "red"
+    svg.write("4F_path.svg")
 
-    return svg.write("4F_path.svg")
+
+@app.route('/map/', methods=['POST'])
+def hello():
+    start = request.form['start']
+    end = request.form['end']
+    try:
+        path = gen_shortest_path(start, end)
+        svg_gen(path)
+        return app.send_static_file("4F_path.svg")
+    except:
+        return "Oops! Typo?"
 
 
 @app.route('/js/<path:path>')
