@@ -1,12 +1,53 @@
-path=['RM_402','H1','H2','H3','H4','H5','RR_M1']
+form=document.getElementById("form-container")
 
-for(i=0; i<path.length-1; i++){
-    console.log(path[i]+'-'+path[i+1])
-    e=document.getElementById(path[i]+'-'+path[i+1])
-    if(e!==null){
-        e.style.stroke="red"
-    } else {
-        e=document.getElementById(path[i+1]+'-'+path[i])
-        e.style.stroke="red"
-    }
+go=document.getElementById("go")
+go.addEventListener("click",search)
+
+
+function search(){
+    $.ajax({
+           type: "GET",
+           url: "http://httpbin.org/get",
+           data: $("#form").serialize(), 
+           success: function(data)
+           {
+               getresults(data);
+               showmap()
+           }
+         });
+}
+
+function getresults(data){
+    console.log(data)
+}
+
+function showmap(){
+    $("#form-container").animate({bottom: "100%"}, 700, false);
+}
+
+
+floors = ['1F','2F','3F','4F']
+starting_floor=3 // (4th in floorlist)
+sel=document.getElementById('floor-selector')
+map=document.getElementById('map')
+for(i=0; i<floors.length; i++){
+    node=document.createElement("div")
+    node.classList.add("level")
+    node.innerHTML=floors[i]
+    sel.appendChild(node)
+}
+
+sel.childNodes[starting_floor].classList.add("current")
+
+
+
+levels=document.getElementsByClassName('level')
+for(i=0; i<levels.length; i++){
+    levels[i].addEventListener("click",changeLevel,false)
+}
+
+function changeLevel(){
+    document.getElementsByClassName("current")[0].classList.remove("current")
+    console.log(this.classList.add("current"))
+    map.src="img/"+this.innerHTML+"_path.svg"
 }

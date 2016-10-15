@@ -11,7 +11,7 @@ html, body{
     height: 100%;
     background: orange;
     z-index: 1;
-    display: none;
+    bottom: 0;
 }
 
 form{
@@ -38,7 +38,33 @@ button{
 }
 
 #map-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #EEEEEE;
+}
+
+#map{
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+#floor-selector{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    z-index: 1;
+    background: white;
+    border-radius: .1em;
+}
+
+#floor-selector .level{
+    padding: 0.5em;
+    border-radius: .1em;
+}
+
+#floor-selector .current{
+    background: lightgrey;
 }
