@@ -3,42 +3,142 @@ html, body{
     height: 100%;
     width: 100%;
     overflow: hidden;
+    font-family: 'Raleway'
 }
 
 #form-container{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: orange;
-    z-index: 1;
-    display: none;
+    background: white;
+    z-index: 2;
+    bottom: 0;
+}
+
+#title{
+    font-size: 120%;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    padding: .2em 0;
 }
 
 form{
     position: absolute;
     height: 0;
     width: 100%;
-    top: 50%;
+    top: 60%;
     transform: translate(0,-8em);
+    font-size: 30pt;
 }
 
 input{
-    font-size: 300%;
-    width: 60%;
-    margin: 0.2em 20%;
-    height: 1.2em;
-    border: 5px solid black;
+    width: 90%;
+    margin: 0.2em 5%;
+    padding: 0 .5em;
+    box-sizing: border-box;
+    height: 1.5em;
+    border: 2px solid black;
+    font-family: 'Raleway';
+    font-size: 30pt;
+
 }
 
-button{
-    font-size: 300%;
-    width: 60%;
-    margin: 0.2em 20%;
-    height: 1.2em;
+textarea:focus, input:active, input:focus{
+    outline: none;
+}
+
+#go{
+    width: 90%;
+    margin: 0.2em 5%;
+    padding: 0 .5em;
+    box-sizing: border-box;
+    height: 1.5em;
+    line-height: 1.35em;
+    border: 3px solid black;
+    z-index: 1;
+}
+
+#go:hover,#go:focus{
+    background: black;
+    color: white;
 }
 
 #map-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #EEEEEE;
+}
+
+#map{
     position: absolute;
     width: 100%;
     height: 100%;
+    text-align: center;
+}
+
+#map svg{
+    position: relative;
+    top: 135px;
+    height: 50%;
+    width: 100%;
+}
+
+#location-holder{
+    width: 100%;
+    font-size: 150%;
+}
+
+
+#newsearch{
+    padding: .2em 1em ;
+}
+
+#locations{
+    padding: .2em 1em;
+}
+
+#newsearch:hover{
+    background: black;
+    color: white;
+}
+
+#floor-selector{
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    z-index: 1;
+    background: white;
+    border-radius: .1em;
+}
+
+#floor-selector .level{
+    padding: 0.5em;
+    border-radius: .1em;
+}
+
+#floor-selector .current{
+    background: lightgrey;
+}
+
+@media (min-width: 1200px) and (min-height: 300px){
+
+body{
+    font-size: 120%;
+}
+
+input, #go{
+    width: 60%;
+    margin: 0.2em 20%;
+}
+#location-holder div{
+    display: inline-block;
+    font-size: 130%;
+}
+#newsearch{
+    float: right;
+}
+
 }
