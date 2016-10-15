@@ -3,13 +3,22 @@ function search(){
     $.ajax({
            type: "GET",
            url: "http://httpbin.org/get",
-           data: $("#form").serialize(), 
+           data: roommap($("#form").serialize()), 
            success: function(data)
            {
                getresults(data); 
                showmap()
            }
          });
+}
+
+alias={'Room+402':'RM_402', 'Room+401+A':'RM_401_a','Room+401+B':'RM_401_b', 'West+Stairwell': 'ST_WEST','Men\'s+Restroom':'RR_M1'}
+
+function roommap(str){
+    strs=str.split(/=|&/)
+    return strs[0]+"="
+        +((alias[strs[1]]!=undefined)? alias[strs[1]]:strs[1]) +"&"+strs[2]+"="
+        +((alias[strs[3]]!=undefined)? alias[strs[3]]:strs[3])
 }
 
 locations=document.getElementById('locations')
@@ -50,7 +59,6 @@ map.innerHTML=svg[starting_floor]
 
 levels=document.getElementsByClassName('level')
 for(i=0; i<levels.length; i++){
-    console.log(i)
     levels[i].addEventListener("click",updatemap,false)
 }
 
