@@ -21,6 +21,7 @@ function roommap(str){
         +((alias[strs[3]]!=undefined)? alias[strs[3]]:strs[3])
 }
 
+lastpath = []
 locations=document.getElementById('locations')
 function getresults(data){
     console.log(data)
@@ -29,6 +30,7 @@ function getresults(data){
     stop=path[path.length-1]
     locations.innerHTML= start+" to "+stop
     renderpath(path)
+    lastpath=path
 }
 
 function showmap(){
@@ -40,6 +42,8 @@ function showmap(){
 
 function showsearch(){
     $("#form-container").animate({bottom: "0"}, 700, false);
+    sel.childNodes[starting_floor].classList.add("current")
+    map.innerHTML=svg[starting_floor]
 }
 
 
@@ -75,6 +79,7 @@ function updatemap(){
     this.classList.add("current")
     console.log(map.innerHTML)
     map.innerHTML=svg[j]
+    renderpath(lastpath)
 }
 
 
