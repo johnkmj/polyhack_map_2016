@@ -34,8 +34,8 @@ def import_floors(path):
 def hello():
     start = request.form['start']
     end = request.form['end']
-    print(start)
-    print(end)
+    # print(start)
+    # print(end)
     path = generate_graph(start, end)
     csv_res = ""
     for node in path:
@@ -66,5 +66,5 @@ def root():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', debug=True)
+    port = int(os.environ.get("PORT", 80))
+    app.run(host='0.0.0.0', port=port, debug=True)
