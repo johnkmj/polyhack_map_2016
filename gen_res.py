@@ -1,5 +1,4 @@
 import xml.etree.ElementTree
-import pandas as pd
 import csv
 import math
 import sys
@@ -143,7 +142,7 @@ def read_nodes():
         return list(itertools.chain.from_iterable(reader))
 
 
-def gen_graph(arr):
+def gen_shortest_path(arr, point_1, point_2):
     g = Graph()
 
     nodes = read_nodes()
@@ -156,8 +155,6 @@ def gen_graph(arr):
             if arr[x][y] != 0:
                 g.add_edge(nodes[x], nodes[y], arr[x][y])
 
-
-def gen_shortest_path(point_1, point_2)
     dijkstra(g, g.get_vertex(point_1), g.get_vertex(point_2))
 
     target = g.get_vertex(point_2)
@@ -167,9 +164,7 @@ def gen_shortest_path(point_1, point_2)
     return path
 
 
-def generate_graph():
-    adj = pd.read_csv("lib/adj.csv", sep=',')
-    rooms = pd.read_csv("lib/names.csv", sep='\n')
+def generate_graph(point_1, point_2):
     import csv
 
     adj = []
@@ -199,4 +194,4 @@ def generate_graph():
     # with open("dist.csv", "wb") as f:
     #     writer = csv.writer(f)
     #     writer.writerows(arr)
-    gen_graph(arr)
+    return gen_shortest_path(arr, point_1, point_2)
