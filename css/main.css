@@ -53,8 +53,18 @@ input{
     height: 100%;
 }
 
-#map-container{
-    
+#location-holder{
+    width: 96%;
+    font-size: 300%;
+    padding: .2em 2%;
+}
+
+#location-holder div{
+    display: inline-block
+}
+
+#newsearch{
+    float: right;
 }
 
 #floor-selector{
