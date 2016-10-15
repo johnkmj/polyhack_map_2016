@@ -9,6 +9,6 @@
 
 virtualenv -p python2.7 env
 source env/bin/activate
-pip install -r requirements.txt
+pip2 install -r requirements.txt
 python2.7 run.py
 
