@@ -3,7 +3,7 @@ function search(){
     $.ajax({
            type: "POST",
            url: "/map/",
-           data: roommap($("#form").serialize()), 
+           data: $("#form").serialize(), 
            success: function(data)
            {
                getresults(data); 
@@ -12,7 +12,7 @@ function search(){
          });
 }
 
-alias={'Room+402':'RM_402', 'Room+401+A':'RM_401_a','Room+401+B':'RM_401_b', 'West+Stairwell': 'ST_WEST','Men\'s+Restroom':'RR_M1'}
+// alias={'Room+402':'RM_402', 'Room+401+A':'RM_401_a','Room+401+B':'RM_401_b', 'West+Stairwell': 'ST_WEST','Men\'s+Restroom':'RR_M1'}
 
 function roommap(str){
     strs=str.split(/=|&/)
