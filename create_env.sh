@@ -10,5 +10,5 @@
 virtualenv -p python2.7 env
 source env/bin/activate
 pip2 install -r requirements.txt
-# uwsgi --socket 0.0.0.0:80 --protocol=http -w wsgi:app
-python polyhack_map_2016.py
+uwsgi --socket 0.0.0.0:80 --protocol=http -w wsgi:app
+# python polyhack_map_2016.py
