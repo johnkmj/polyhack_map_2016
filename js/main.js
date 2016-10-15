@@ -24,9 +24,11 @@ function roommap(str){
 locations=document.getElementById('locations')
 function getresults(data){
     console.log(data)
-    start="Room 402"
-    stop="Room 505"
+    path=data.split(",")
+    start=path[0]
+    stop=path[path.length-1]
     locations.innerHTML= start+" to "+stop
+    renderpath(path)
 }
 
 function showmap(){

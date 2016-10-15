@@ -34,6 +34,8 @@ def import_floors(path):
 def hello():
     start = request.form['start']
     end = request.form['end']
+    print(start)
+    print(end)
     path = generate_graph(start, end)
     csv_res = ""
     for node in path:
